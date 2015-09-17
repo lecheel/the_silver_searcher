@@ -17,22 +17,33 @@ int first_file_match = 1;
 
 const char *color_reset = "\033[0m\033[K";
 
-void print_path(const char *path, const char sep) {
-    if (opts.print_path == PATH_PRINT_NOTHING && !opts.vimgrep) {
-        return;
+void print_path(const char* path, const char sep) {
+    char cwd[1024];
+    getcwd(cwd, sizeof(cwd));
+    if (path[0] == '/' )  {
+      cwd[0]='\0';
     }
     path = normalize_path(path);
+    if (!opts.ftestyle) {
+    /*  path = normalize_path(path); */
 
     if (opts.ackmate) {
         fprintf(out_fd, ":%s%c", path, sep);
     } else if (opts.vimgrep) {
         fprintf(out_fd, "%s%c", path, sep);
     } else {
-        if (opts.color) {
-            fprintf(out_fd, "%s%s%s%c", opts.color_path, path, color_reset, sep);
-        } else {
-            fprintf(out_fd, "%s%c", path, sep);
+            if (opts.color) {
+                fprintf(out_fd, "%s%s%s%c", opts.color_path, path, color_reset, sep);
+            } else {
+                fprintf(out_fd, "%s%c", path, sep);
+            }
         }
+    } else {
+            if (opts.color) {
+                fprintf(out_fd, "%sFile: %s/%s%s%c", opts.color_path, cwd, path, color_reset, sep);
+            } else {
+                fprintf(out_fd, "File: %s/%s%c", cwd, path, sep);
+            }
     }
 }
 
@@ -276,7 +287,7 @@ void print_column_number(const match_t matches[], size_t last_printed_match,
 
 void print_file_separator(void) {
     if (first_file_match == 0 && opts.print_break) {
-        fprintf(out_fd, "\n");
+/*        fprintf(out_fd, "\n"); */
     }
     first_file_match = 0;
 }

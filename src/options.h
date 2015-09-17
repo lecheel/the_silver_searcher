@@ -28,6 +28,7 @@ enum path_print_behavior {
 
 typedef struct {
     int ackmate;
+    int ftestyle;
     pcre *ackmate_dir_filter;
     pcre_extra *ackmate_dir_filter_extra;
     size_t after;

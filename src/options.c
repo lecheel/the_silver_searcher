@@ -57,6 +57,7 @@ Output Options:\n\
                           (Enabled by default)\n\
   -C --context [LINES]    Print lines before and after matches (Default: 2)\n\
      --[no]group          Same as --[no]break --[no]heading\n\
+     --fte                print result as leFTE\n\
   -g PATTERN              Print filenames matching PATTERN\n\
   -l --files-with-matches Only print filenames that contain matches\n\
                           (don't print the matching lines)\n\
@@ -213,6 +214,7 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
 
     option_t base_longopts[] = {
         { "ackmate", no_argument, &opts.ackmate, 1 },
+        { "ftestyle", no_argument, &opts.ftestyle, 1 },
         { "ackmate-dir-filter", required_argument, NULL, 0 },
         { "affinity", no_argument, &opts.use_thread_affinity, 1 },
         { "after", optional_argument, NULL, 'A' },
@@ -640,6 +642,15 @@ void parse_options(int argc, char **argv, char **base_paths[], char **paths[]) {
         opts.print_break = 1;
         group = 1;
         opts.search_stream = 0;
+    }
+
+    if (opts.ftestyle) {
+	if (opts.color == 0)
+        opts.color = 0;
+	else 
+	    opts.color = 1;
+        opts.print_break = 1;
+        group = 1;
     }
 
     if (opts.vimgrep) {
