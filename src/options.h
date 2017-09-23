@@ -52,14 +52,17 @@ typedef struct {
     int literal_ends_wordchar;
     size_t max_matches_per_file;
     int max_search_depth;
+    int mmap;
+    int multiline;
     int one_dev;
     int only_matching;
     char path_sep;
-    char *path_to_agignore;
+    int path_to_ignore;
     int print_break;
     int print_count;
     int print_filename_only;
     int print_path;
+    int print_all_paths;
     int print_line_numbers;
     int print_long_lines; /* TODO: support this in print.c */
     int passthrough;
@@ -83,6 +86,7 @@ typedef struct {
     int parallel;
     int use_thread_affinity;
     int vimgrep;
+    size_t width;
     int word_regexp;
     int workers;
 } cli_options;

@@ -12,17 +12,29 @@ Language types are output:
     --ada
         .ada  .adb  .ads
   
+    --asciidoc
+        .adoc  .ad  .asc  .asciidoc
+  
     --asm
         .asm  .s
   
     --batch
         .bat  .cmd
   
+    --bitbake
+        .bb  .bbappend  .bbclass  .inc
+  
+    --bro
+        .bro  .bif
+  
     --cc
         .c  .h  .xs
   
     --cfmx
         .cfc  .cfm  .cfml
+  
+    --chpl
+        .chpl
   
     --clojure
         .clj  .cljs  .cljc  .cljx
@@ -31,7 +43,10 @@ Language types are output:
         .coffee  .cjsx
   
     --cpp
-        .cpp  .cc  .C  .cxx  .m  .hpp  .hh  .h  .H  .hxx
+        .cpp  .cc  .C  .cxx  .m  .hpp  .hh  .h  .H  .hxx  .tpp
+  
+    --crystal
+        .cr  .ecr
   
     --csharp
         .cs
@@ -39,8 +54,14 @@ Language types are output:
     --css
         .css
   
+    --cython
+        .pyx  .pxd  .pxi
+  
     --delphi
-        .pas  .int  .dfm  .nfm  .dof  .dpk  .dproj  .groupproj  .bdsgroup  .bdsproj
+        .pas  .int  .dfm  .nfm  .dof  .dpk  .dpr  .dproj  .groupproj  .bdsgroup  .bdsproj
+  
+    --dot
+        .dot  .gv
   
     --ebuild
         .ebuild  .eclass
@@ -49,10 +70,16 @@ Language types are output:
         .el
   
     --elixir
-        .ex  .exs
+        .ex  .eex  .exs
+  
+    --elm
+        .elm
   
     --erlang
         .erl  .hrl
+  
+    --factor
+        .factor
   
     --fortran
         .f  .f77  .f90  .f95  .f03  .for  .ftn  .fpp
@@ -63,17 +90,26 @@ Language types are output:
     --gettext
         .po  .pot  .mo
   
+    --glsl
+        .vert  .tesc  .tese  .geom  .frag  .comp
+  
     --go
         .go
   
     --groovy
-        .groovy  .gtmpl  .gpp  .grunit
+        .groovy  .gtmpl  .gpp  .grunit  .gradle
   
     --haml
         .haml
   
+    --handlebars
+        .hbs
+  
     --haskell
         .hs  .lhs
+  
+    --haxe
+        .hx
   
     --hh
         .h
@@ -84,6 +120,9 @@ Language types are output:
     --ini
         .ini
   
+    --ipython
+        .ipynb
+  
     --jade
         .jade
   
@@ -91,13 +130,19 @@ Language types are output:
         .java  .properties
   
     --js
-        .js  .jsx
+        .es6  .js  .jsx  .vue
   
     --json
         .json
   
     --jsp
-        .jsp  .jspx  .jhtm  .jhtml
+        .jsp  .jspx  .jhtm  .jhtml  .jspf  .tag  .tagf
+  
+    --julia
+        .jl
+  
+    --kotlin
+        .kt
   
     --less
         .less
@@ -107,6 +152,9 @@ Language types are output:
   
     --lisp
         .lisp  .lsp
+  
+    --log
+        .log
   
     --lua
         .lua
@@ -132,11 +180,17 @@ Language types are output:
     --mathematica
         .m  .wl
   
+    --md
+        .markdown  .mdown  .mdwn  .mkdn  .mkd  .md
+  
     --mercury
         .m  .moo
   
     --nim
         .nim
+  
+    --nix
+        .nix
   
     --objc
         .m  .h
@@ -150,6 +204,9 @@ Language types are output:
     --octave
         .m
   
+    --org
+        .org
+  
     --parrot
         .pir  .pasm  .pmc  .ops  .pod  .pg  .tg
   
@@ -162,8 +219,14 @@ Language types are output:
     --pike
         .pike  .pmod
   
+    --plist
+        .plist
+  
     --plone
-        .pt  .cpt  .metadata  .cpy  .py
+        .pt  .cpt  .metadata  .cpy  .py  .xml  .zcml
+  
+    --proto
+        .proto
   
     --puppet
         .pp
@@ -171,17 +234,26 @@ Language types are output:
     --python
         .py
   
+    --qml
+        .qml
+  
     --racket
         .rkt  .ss  .scm
   
     --rake
-        .Rakefiles
+        .Rakefile
+  
+    --restructuredtext
+        .rst
   
     --rs
         .rs
   
     --r
         .R  .Rmd  .Rnw  .Rtex  .Rrst
+  
+    --rdoc
+        .rdoc
   
     --ruby
         .rb  .rhtml  .rjs  .rxml  .erb  .rake  .spec
@@ -202,7 +274,7 @@ Language types are output:
         .scm  .ss
   
     --shell
-        .sh  .bash  .csh  .tcsh  .ksh  .zsh
+        .sh  .bash  .csh  .tcsh  .ksh  .zsh  .fish
   
     --smalltalk
         .st
@@ -228,6 +300,15 @@ Language types are output:
     --tt
         .tt  .tt2  .ttml
   
+    --toml
+        .toml
+  
+    --ts
+        .ts  .tsx
+  
+    --twig
+        .twig
+  
     --vala
         .vala  .vapi
   
@@ -235,7 +316,7 @@ Language types are output:
         .bas  .cls  .frm  .ctl  .vb  .resx
   
     --velocity
-        .vm
+        .vm  .vtl  .vsl
   
     --verilog
         .v  .vh  .sv
@@ -246,6 +327,9 @@ Language types are output:
     --vim
         .vim
   
+    --wix
+        .wxi  .wxs
+  
     --wsdl
         .wsdl
   
@@ -253,7 +337,7 @@ Language types are output:
         .wadl
   
     --xml
-        .xml  .dtd  .xsl  .xslt  .ent
+        .xml  .dtd  .xsl  .xslt  .ent  .tld  .plist
   
     --yaml
         .yaml  .yml
